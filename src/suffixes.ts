@@ -39,7 +39,7 @@ function processSelector(
   parent: SelectorList
 ): SelectorList {
   const [first, second, ...rest] = selector
-  if (first.type !== 'nesting') return [selector]
+  if (first.type !== 'nesting' || !second) return [selector]
   if (second.type !== 'type')
     return parent.map(s => s.concat(selector.slice(1)))
   return parent.map(selector =>
