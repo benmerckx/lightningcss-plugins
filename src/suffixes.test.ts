@@ -42,3 +42,11 @@ test('nesting in nesting', () => {
   `)
   ).toBe('.A-b-c .B{color:red}.A-b-c .B-d:hover{color:red}')
 })
+
+test('we lose this', () => {
+  expect(convert(`.a{&div{color:red}}`)).toBe('.adiv{color:red}')
+})
+
+test('but we can just do this instead', () => {
+  expect(convert(`.a{&:is(div){color:red}}`)).toBe('.a:is(div){color:red}')
+})
