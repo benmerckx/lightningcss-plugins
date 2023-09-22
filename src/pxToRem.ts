@@ -9,8 +9,11 @@ import {Visitor} from 'lightningcss'
 // - exclude
 
 export interface PxToRemOptions {
+  /** Represents the root element font size (default: 16) */
   rootValue?: number
+  /** The decimal numbers to allow the REM units to grow to (default: 5) */
   unitPrecision?: number
+  /** Set the minimum pixel value to replace (default: 0) */
   minPixelValue?: number
 }
 
